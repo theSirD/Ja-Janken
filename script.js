@@ -52,24 +52,25 @@
 function setAvatar(characterImage) {
     const playerAvatar = document.querySelector(".human");
     console.log(characterImage.target);
-    playerAvatar.innerHTML = `<img src="${characterImage.target.src}" width="160" height="160"></img> <div class="score">Score: 0/5pts</div>
-    <div class="choice">Rock</div>`;
+    playerAvatar.innerHTML = `<img src="${characterImage.target.src}" width="160" height="160"></img> <div class="score">Score: 0/5</div>`;
 
     const computerAvatar = document.querySelector(".computer");
     let opponent = Math.floor(Math.random() * 2);
     if ((characterImage.target.classList[0] == "gon")  || (characterImage.target.classList[0] == "killua")) {
         if (opponent==0) {
-            computerAvatar.innerHTML = '<img src="imgs/hisoka.jpg" width="160" height="160"></img> <div class="score">Score: 0/5pts</div> <div class="choice">Rock</div>';
+            computerAvatar.innerHTML = '<img src="imgs/hisoka.jpg" width="160" height="160"></img> <div class="score">Score: 0/5</div>';
         } else {
-            computerAvatar.innerHTML = '<img src="imgs/illumi.jpg" width="160" height="160"></img> <div class="score">Score: 0/5pts</div> <div class="choice">Rock</div>';
+            computerAvatar.innerHTML = '<img src="imgs/illumi.jpg" width="160" height="160"></img> <div class="score">Score: 0/5</div>';
         }
     } else {
         if (opponent==0) {
-            computerAvatar.innerHTML = '<img src="imgs/gon.jpeg" width="160" height="160"></img> <div class="score">Score: 0/5pts</div> <div class="choice">Rock</div>';
+            computerAvatar.innerHTML = '<img src="imgs/gon.jpeg" width="160" height="160"></img> <div class="score">Score: 0/5</div>';
         } else {
-            computerAvatar.innerHTML = '<img src="imgs/killua.jpg" width="160" height="160"></img> <div class="score">Score: 0/5pts</div> <div class="choice">Rock</div>';
+            computerAvatar.innerHTML = '<img src="imgs/killua.jpg" width="160" height="160"></img> <div class="score">Score: 0/5</div>';
         }
     }
+
+    displayChoices();
 }
 
 function chooseAvatar() {
@@ -85,7 +86,9 @@ function chooseAvatar() {
         array.forEach(characterImage => {
             characterImage.addEventListener("click", setAvatar);
         });
-});
+    });
+
+    
 }
 
 
@@ -103,6 +106,21 @@ function reloadPage() {
       });
     
 }
+
+function displayChoices() {
+    const element = document.querySelector('.char-prompt');
+    element.remove();
+
+    const content = document.querySelector(".content");
+
+    content.innerHTML += '<div class="show-me">Ja-Janken! Show me...</div>';
+    content.innerHTML += '<div class="choices flex-container"></div>';
+
+    const choices = document.querySelector(".choices");
+    
+    choices.innerHTML += '<div class="choice rock">Rock</div> <div class="choice paper">Paper</div> <div class="choice scissors">Scissors</div>';
+}
+
 chooseAvatar();
 redirectToVkPage();
 reloadPage();
