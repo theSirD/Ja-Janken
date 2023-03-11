@@ -88,7 +88,24 @@ function chooseAvatar() {
 });
 }
 
+
+function redirectToVkPage() {
+    document.getElementById("VK-redirect").addEventListener("click", () => {
+        window.location.href = "https://vk.com/isaevdaniil";
+    });
+    
+}
+
+
+function reloadPage() {
+    document.getElementById("reload").addEventListener("click", function() {
+        window.location.reload();
+      });
+    
+}
 chooseAvatar();
+redirectToVkPage();
+reloadPage();
 
 
 
