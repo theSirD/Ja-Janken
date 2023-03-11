@@ -63,6 +63,15 @@ html, body {
   
   }
 
+  .default {
+    background-color: gray;
+    width: 160px;
+    height: 160px;
+    justify-content: center;
+    align-items: center;
+    font-size: 150px;
+  }
+
   .player {
     flex-direction: column;
     align-items: center;
@@ -89,6 +98,11 @@ html, body {
     border-radius: 10px;
     font-size: 35px;
     padding: 1px 15px;
+  }
+
+  .result {
+    margin: 50px 0;
+    font-size: 30px;
   }
 
   .footer {
