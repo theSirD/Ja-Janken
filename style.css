@@ -17,3 +17,37 @@ html, body {
     flex-shrink: 0;
     background-color: #87a9cc;
   }
+
+  .flex-container {
+    display: flex
+  }
+
+  .header {
+    /* justify-content: space-between; */
+    justify-content: space-around;
+    padding: 10px;
+  }
+
+  .logo {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .subtitle {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .characters {
+    gap: 10px;
+  }
+
+  
+  
