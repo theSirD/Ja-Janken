@@ -1,0 +1,19 @@
+html, body {
+    height: 100%;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+  }
+  .header {
+    background-color: #87a9cc;
+  }
+  .content {
+    flex: 1 0 auto;
+    background-color: #fff;
+  }
+  .footer {
+    flex-shrink: 0;
+    background-color: #87a9cc;
+  }
